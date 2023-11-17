@@ -10,11 +10,9 @@
  */
 function kaprekarConstant(num) {
     const KAPREKAR_CONSTANT = 6174;
-    
     function padNumber(n) {
         return n.toString().padStart(4, '0');
     }
-
     function kaprekarStep(n) {
         const numStr = padNumber(n);
         const ascending = parseInt(numStr.split('').sort().join(''), 10);
@@ -23,7 +21,6 @@ function kaprekarConstant(num) {
         console.log(`${descending} - ${ascending} = ${result}`);
         return result;
     }
-
     let currentNumber = num;
     let steps = 0;
     while (currentNumber !== KAPREKAR_CONSTANT) {
@@ -35,9 +32,8 @@ function kaprekarConstant(num) {
         }
     }
     return steps;
-
 }
-
-const startingNumber = 3756;
+// Esempio di utilizzo
+const startingNumber = 3524;
 const stepsToReach6174 = kaprekarConstant(startingNumber);
 console.log(`Sono necessari ${stepsToReach6174} passaggi per raggiungere la costante di Kaprekar da ${startingNumber}.`);
